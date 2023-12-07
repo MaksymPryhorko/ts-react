@@ -1,21 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import { App } from './components/App';
-import {User} from "./components/App/App.types"
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import Input from "./components/App/App";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-
-const user: User = {
-  id: 1, name: "Max", email: "max@ukr.net"
-};
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
 root.render(
   <React.StrictMode>
-    <App user={user} />
+    <Input />
   </React.StrictMode>
 );
 

@@ -1,14 +1,20 @@
-import React from 'react';
-import { User } from './App.types';
+import React, { ChangeEvent, useState } from "react";
 
-type Props = {
-  user: User;
-};
+function Input() {
+  const [text, setText] = useState<string>("");
 
-export function App({user}: Props) {
+  const handleTextChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setText(event.target.value);
+
+    console.log("Введений текст", event.target.value);
+  };
+
   return (
-    <div>
-    <h1>{user.name}</h1>
-  </div>);
+    <>
+      <p>Input something</p>
+      <input type="text" value={text} onChange={handleTextChange}></input>
+    </>
+  );
 }
 
+export default Input;
